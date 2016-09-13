@@ -1,0 +1,26 @@
+- empty_repo = @project.empty_repo?
+.project-home-panel.text-center{ class: ("empty-project" if empty_repo) }
+  %div{ class: container_class }
+    = project_icon(@project, alt: @project.name, class: 'project-avatar avatar s70 avatar-tile')
+    %h1.project-title
+      = @project.name
+      %span.visibility-icon.has-tooltip{data: { container: 'body' }, title: visibility_icon_description(@project)}
+        = visibility_level_icon(@project.visibility_level, fw: false)
+
+    .project-home-desc
+      - if @project.description.present?
+        = markdown(@project.description, pipeline: :description)
+
+      - if forked_from_project = @project.forked_from_project
+        %p
+          Forked from
+          = link_to project_path(forked_from_project) do
+            = forked_from_project.namespace.try(:name)
+
+    .project-repo-buttons.project-action-buttons
+      .count-buttons
+        = render 'projects/buttons/star'
+        = render 'projects/buttons/fork'
+
+      .project-clone-holder
+        = render "shared/clone_panel"

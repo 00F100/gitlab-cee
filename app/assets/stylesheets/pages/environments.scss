@@ -1,0 +1,36 @@
+.environments {
+
+  .commit-title {
+    margin: 0;
+  }
+
+  .icon-play {
+    height: 13px;
+    width: 12px;
+  }
+
+  .dropdown-new {
+    color: $table-text-gray;
+  }
+
+  .dropdown-menu {
+
+    .fa {
+      margin-right: 6px;
+      color: $table-text-gray;
+    }
+  }
+
+  .branch-name {
+    color: $gl-dark-link-color;
+  }
+}
+
+.table.builds.environments {
+  min-width: 500px;
+
+  .icon-container {
+    width: 20px;
+    text-align: center;
+  }
+}
