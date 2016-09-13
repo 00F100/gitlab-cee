@@ -37,6 +37,7 @@ test: &test
   reconnect: false
   database: gitlabhq_test
   pool: 5
+  host: localhost
   username: root
   password:
   # socket: /tmp/mysql.sock
