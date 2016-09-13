@@ -34,7 +34,7 @@ if [ -f /.dockerenv ] || [ -f ./dockerinit ]; then
     cp config/database.yml.mysql config/database.yml
     sed -i 's/username:.*/username: root/g' config/database.yml
     sed -i 's/password:.*/password:/g' config/database.yml
-    sed -i 's/# socket:.*/host: localhost/g' config/database.yml
+    sed -i 's/# socket:.*/host: 127.0.0.1/g' config/database.yml
 
     cp config/resque.yml.example config/resque.yml
     sed -i 's/localhost/redis/g' config/resque.yml
